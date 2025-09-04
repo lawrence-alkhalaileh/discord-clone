@@ -6,7 +6,7 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../app/generated/prisma"
+  // output   = "../prisma-output/generated/prisma"
 }
 
 datasource db {
@@ -19,6 +19,7 @@ model Profile {
   userId   String @unique @db.VarChar(244)
   name     String
   imageUrl String @db.Text
+  email    String @db.Text()
 
   servers Server[]
 
