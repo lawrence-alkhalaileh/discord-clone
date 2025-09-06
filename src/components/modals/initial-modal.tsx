@@ -23,7 +23,7 @@ import {
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { FileUpload } from "@/components/FileUpload";
+import { FileUpload } from "@/components/file-upload";
 import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
@@ -64,7 +64,7 @@ export const InitialModal = () => {
       <DialogContent className="bg-white text-black p-0 overflow-hidden">
         <DialogHeader className="pt-8 px-6">
           <DialogTitle className="text-2xl text-center font-bold">
-            Customize you server
+            Customize your server
           </DialogTitle>
           <DialogDescription className="text-center text-zinc-500">
             Give your server a personality with a name and an image, You can
