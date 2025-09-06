@@ -5,6 +5,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { cn } from "@/lib/utils";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { ModalProvider } from "@/providers/modal-provider";
 
 const font = Open_Sans({
   subsets: ["latin"],
@@ -35,6 +36,7 @@ export default function RootLayout({
             storageKey="discord-theme"
             enableSystem={false}
           >
+            <ModalProvider />
             <TooltipProvider>{children}</TooltipProvider>
           </ThemeProvider>
         </body>
