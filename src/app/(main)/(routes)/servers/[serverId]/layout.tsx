@@ -6,12 +6,18 @@ import { ReactNode } from "react";
 
 interface ServerIdLayoutProps {
   children: ReactNode;
-  params: {
+  params: Promise<{
     serverId: string;
-  };
+  }>;
 }
 
-const ServerIdLayout = async ({ children, params }: ServerIdLayoutProps) => {
+const ServerIdLayout = async (props: ServerIdLayoutProps) => {
+  const params = await props.params;
+
+  const {
+    children
+  } = props;
+
   const profile = await currentProfile();
 
   if (!profile) {
