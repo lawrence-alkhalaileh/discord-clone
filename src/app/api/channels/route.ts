@@ -2,7 +2,7 @@ import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
 import { MemberRole } from "@prisma/client";
 import { NextResponse } from "next/server";
-
+// 
 export async function POST(req: Request) {
   try {
     const profile = await currentProfile();
