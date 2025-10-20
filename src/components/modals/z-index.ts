@@ -5,3 +5,5 @@ export { LeaveServerModal } from "./leave-server-modal";
 export { InviteModal } from "./invite-modal";
 export { MembersModal } from "./members-modal";
 export { DeleteServerModal } from "./delete-server-modal";
+export { DeleteChannelModal } from "./delete-channel-modal";
+export { EditChannelModal } from "./edit-channel-modal";

@@ -8,6 +8,8 @@ import {
   LeaveServerModal,
   MembersModal,
   DeleteServerModal,
+  DeleteChannelModal,
+  EditChannelModal,
 } from "@/components/modals/z-index";
 
 export const ModalProvider = () => {
@@ -20,6 +22,8 @@ export const ModalProvider = () => {
       <CreateChannelModal />
       <LeaveServerModal />
       <DeleteServerModal />
+      <DeleteChannelModal />
+      <EditChannelModal />
     </>
   );
 };
