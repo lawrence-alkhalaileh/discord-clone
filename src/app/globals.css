@@ -129,3 +129,21 @@ svg {
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.avatar-float {
+  animation: float 3s ease-in-out infinite;
+}

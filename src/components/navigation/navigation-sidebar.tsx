@@ -8,6 +8,7 @@ import { ModeToggle } from "@/components/mode-toggle";
 import NavigationAction from "./navigation-action";
 import { NavigationItem } from "./navigation-item";
 import { UserButton } from "@clerk/nextjs";
+import UserAvatar from "../user-avatar";
 
 export const NavigationSidebar = async () => {
   const profile = await currentProfile();
@@ -43,13 +44,23 @@ export const NavigationSidebar = async () => {
       </ScrollArea>
       <div className="pb-3 mt-auto flex items-center flex-col gap-y-4">
         <ModeToggle />
-        <UserButton
-          appearance={{
-            elements: {
-              avatarBox: "h-[48px] w-[48px]",
-            },
-          }}
-        />
+
+        <div className="relative">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <UserAvatar
+              src={profile.imageUrl}
+              className="h-8 w-8 avatar-float"
+            />
+          </div>
+
+          <UserButton
+            appearance={{
+              elements: {
+                avatarBox: "opacity-0",
+              },
+            }}
+          />
+        </div>
       </div>
     </div>
   );
