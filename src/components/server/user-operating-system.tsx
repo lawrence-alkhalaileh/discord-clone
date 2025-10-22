@@ -11,7 +11,7 @@ const UserOperatingSystem = () => {
     }
   }, []);
 
-  return <div>{modifierKey} + K</div>;
+  return <div>{modifierKey} + Q</div>;
 };
 
 export default UserOperatingSystem;
