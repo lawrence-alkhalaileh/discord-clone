@@ -1,6 +1,7 @@
 import ServerSidebar from "@/components/server/server-sidebar";
 import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
+import { SignIn } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import { ReactNode } from "react";
 
@@ -14,14 +15,12 @@ interface ServerIdLayoutProps {
 const ServerIdLayout = async (props: ServerIdLayoutProps) => {
   const params = await props.params;
 
-  const {
-    children
-  } = props;
+  const { children } = props;
 
   const profile = await currentProfile();
 
   if (!profile) {
-    return redirect("/");
+    return <SignIn />;
   }
 
   const server = await db.server.findUnique({
