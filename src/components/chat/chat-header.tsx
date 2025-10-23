@@ -14,7 +14,7 @@ const ChatHeader = ({ serverId, name, type, imageUrl }: ChatHeaderProps) => {
         border-neutral-300 dark:border-neutral-800 border-b-2"
     >
       <Menu />
-      
+      {}
     </div>
   );
 };
