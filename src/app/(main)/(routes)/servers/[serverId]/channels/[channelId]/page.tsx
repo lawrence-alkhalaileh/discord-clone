@@ -5,14 +5,15 @@ import { ChatHeader } from "@/components/chat/chat-header";
 import { db } from "@/lib/db";
 
 interface ChannelIdPageProps {
-  params: {
+  params: Promise<{
     serverId: string;
     channelId: string;
-  };
+  }>;
 }
 
 const ChannelIdPage = async ({ params }: ChannelIdPageProps) => {
   const profile = await currentProfile();
+  const { channelId, serverId } = await params;
 
   if (!profile) {
     return <SignIn />;
@@ -20,13 +21,13 @@ const ChannelIdPage = async ({ params }: ChannelIdPageProps) => {
 
   const channel = await db.channel.findUnique({
     where: {
-      id: params.channelId,
+      id: channelId,
     },
   });
 
   const member = await db.channel.findFirst({
     where: {
-      serverId: params.serverId,
+      serverId: serverId,
       profileId: profile.id,
     },
   });

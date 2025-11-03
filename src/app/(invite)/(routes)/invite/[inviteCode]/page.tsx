@@ -1,15 +1,14 @@
 import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
-import React from "react";
 
 interface InviteCodePageProps {
-  params: { inviteCode: string };
+  params: Promise<{ inviteCode: string }>;
 }
 
 const InviteCodePage = async ({ params }: InviteCodePageProps) => {
   const profile = await currentProfile();
-  const { inviteCode } = params;
+  const { inviteCode } = await params;
 
   if (!profile) {
     return redirect("/");
